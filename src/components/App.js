@@ -10,7 +10,7 @@ function App() {
 		<div>
 			<p>Enter your name:</p>
 			<input type="text" value={inputValue} onChange={handleInputChange}/>
-			<p>Hello {inputValue}</p>
+			{inputValue && <p>Hello {inputValue}</p>}
 		</div>
 	)
 }
