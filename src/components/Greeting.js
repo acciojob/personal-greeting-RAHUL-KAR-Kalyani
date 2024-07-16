@@ -7,7 +7,7 @@ function Greeting() {
 	};
 	return (
 		<div>
-			<p>Enter your name:</p>
+			<p>Enter your name: </p>
 			<input type="text" value={inputValue} onChange={handleInputChange}/>
 			{inputValue && <p>Hello {inputValue}</p>}
 		</div>
