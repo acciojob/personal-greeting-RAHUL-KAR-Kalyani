@@ -1,16 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './../styles/App.css';
+import Greeting from './Greeting';
 
 function App() {
-	const [inputValue, setInputValue] = useState('');
-	const handleInputChange = (e) => {
-		setInputValue(e.target.value);
-	};
+	
 	return (
 		<div>
-			<p>Enter your name:</p>
-			<input type="text" value={inputValue} onChange={handleInputChange}/>
-			{inputValue && <p>Hello {inputValue}</p>}
+			<Greeting/>			
 		</div>
 	)
 }
