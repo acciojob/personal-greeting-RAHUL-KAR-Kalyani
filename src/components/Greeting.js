@@ -9,7 +9,7 @@ function Greeting() {
 		<div>
 			<p>Enter your name: </p>
 			<input type="text" value={inputValue} onChange={handleInputChange}/>
-			{inputValue && <p>Hello {inputValue}</p>}
+			{inputValue && <p>Hello {inputValue}!</p>}
 		</div>
 	)
 }
