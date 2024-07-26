@@ -1,14 +1,19 @@
+// Greeting.test.js
 import React from 'react';
-import './../styles/App.css';
+import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import Greeting from './Greeting';
 
-function App() {
-	
-	return (
-		<div>
-			<Greeting/>			
-		</div>
-	)
-}
+test('displays a personal greeting', () => {
+  render(<Greeting />);
 
-export default App;
+  // Check the initial rendering
+  expect(screen.getByText('Enter your name:')).toBeInTheDocument();
+  expect(screen.queryByText(/Hello /)).toBeNull();
+
+  // Simulate typing into the input
+  fireEvent.change(screen.getByRole('textbox'), { target: { value: 'n' } });
+
+  // Check the updated rendering
+  expect(screen.getByText('Hello n')).toBeInTheDocument();
+});
